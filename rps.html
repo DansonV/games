@@ -1,0 +1,90 @@
+<html>
+	<head>
+		<title>Rock, Paper, Scissors</title>
+		<style>
+			.imgSize {
+				height: 240px;
+				width: 240px;
+			}
+						
+		</style>
+	</head>
+	<body>
+		<img class = "imgSize" id = "r" src="http://www.clker.com/cliparts/H/M/7/G/V/L/rock-hi.png">
+		<img class = "imgSize" id = "p" src="https://1.bp.blogspot.com/-ZcU-uP42vhI/UXxzCfQFs0I/AAAAAAAAJ38/tCM8xIGQtag/s1600/paper.png">
+		<img class = "imgSize" id = "s" src = "http://www.clker.com/cliparts/e/9/6/4/1341955969628633147Pair%20of%20Red%20Scissors.svg.hi.png">
+		
+		<!--Put a <p> with an id of "winner" on the page-->
+		<!--<p>Winner<p> -->
+		<p id = "winner">Choose ROCK, PAPER, OR SCISSORS by clicking the corresponding image.</p>
+		
+		<script>
+			var rock = document.getElementById("r").addEventListener("click",playerRock);
+			var paper = document.getElementById("p").addEventListener("click",playerPaper);
+			var scissors = document.getElementById("s").addEventListener("click",playerScissors);
+			var winner = document.getElementById("winner");
+			
+			//****DETERMINES OUTCOME*****************************************************************************************************************************
+			// 1) Player chooses ROCK
+			function playerRock() {			
+				var choices = ["rock", "paper", "scissors"];
+				console.log("You chose ROCK");
+			
+				// computer picks a random number from 0 to 2
+				var random_number = Math.floor(Math.random() * 3);
+				console.log("Should be rock, paper, or scissors: ", choices[random_number]);
+				
+				if (random_number == 0) {
+					console.log("Opponent chose rock. TIE");
+					winner.innerText = "Opponent chose rock. TIE";
+				} else if (random_number == 1) {
+					console.log("Opponent chose paper. YOU LOSE");
+					winner.innerText = "Opponent chose paper. YOU LOSE";
+				} else {
+					console.log("Opponent chose scissors. YOU WIN!");
+					winner.innerText = "Opponent chose scissors. YOU WIN!";
+				}							
+			}
+			// 2) Player chooses PAPER
+			function playerPaper() {			
+				var choices = ["rock", "paper", "scissors"];
+				console.log("You chose PAPER");
+			
+				// computer picks a random number from 0 to 2
+				var random_number = Math.floor(Math.random() * 3);
+				console.log("Should be rock, paper, or scissors: ", choices[random_number]);
+				
+				if (random_number == 0) {
+					console.log("Opponent chose rock. YOU WIN!");
+					winner.innerText = "Opponent chose rock. YOU WIN!";
+				} else if (random_number == 1) {
+					console.log("Opponent chose paper. TIE");
+					winner.innerText = "Opponent chose paper. YOU TIE";
+				} else {
+					console.log("Opponent chose scissors. YOU LOSE");
+					winner.innerText = "Opponent chose scissors. YOU LOSE";
+				}							
+			}
+			// 3) Player chooses SCISSORS
+			function playerScissors() {			
+				var choices = ["rock", "paper", "scissors"];
+				console.log("You chose SCISSORS");
+			
+				// computer picks a random number from 0 to 2
+				var random_number = Math.floor(Math.random() * 3);
+				console.log("Should be rock, paper, or scissors: ", choices[random_number]);
+				
+				if (random_number == 0) {
+					console.log("Opponent chose rock. YOU LOSE");
+					winner.innerText = "Opponent chose rock. YOU LOSE";
+				} else if (random_number == 1) {
+					console.log("Opponent chose paper. YOU WIN!");
+					winner.innerText = "Opponent chose paper. YOU WIN!";
+				} else {
+					console.log("Opponent chose scissors. TIE");
+					winner.innerText = "Opponent chose scissors. TIE";
+				}							
+			}
+		</script>
+	</body>
+</html>
