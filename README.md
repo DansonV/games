@@ -1,6 +1,6 @@
 # games
 1. Choose your own adventure
-AD
+
 Create a normal HTML file named "adventure.html" with a script tag in the HEAD element.
 Start with an alert setting up your story.
 i.e. "You're in a dark room. You see a door with a faint light underneath."
